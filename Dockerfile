@@ -36,7 +36,7 @@ RUN sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/inst
 RUN cd /opt && \ 
     wget \
        https://apache.org/dyn/closer.lua/guacamole/1.4.0/source/guacamole-server-1.4.0.tar.gz?action=download \
-       https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.59/bin/apache-tomcat-9.0.59.zip && \
+       https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.64/bin/apache-tomcat-9.0.64.zip && \
     mv guacamole-server-1.4.0.tar.gz?action=download guacamole-server.1.4.0.tar.gz
 
 # build guacd
@@ -57,8 +57,8 @@ RUN cd /opt && \
 
 # move tomcat and guac client to proper spot 
 RUN cd /opt && \
-    unzip apache-tomcat-9.0.59.zip && \
-    mv apache-tomcat-9.0.59 /var/lib/tomcat && \
+    unzip apache-tomcat-9.0.64.zip && \
+    mv apache-tomcat-9.0.64 /var/lib/tomcat && \
     mv /opt/guacamole-client-1.4.0/guacamole/target/guacamole-1.4.0.war /var/lib/tomcat/webapps/guacamole.war
 
 # clean up, correct permission setting for scripts, and services
