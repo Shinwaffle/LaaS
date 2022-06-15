@@ -27,7 +27,7 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: update, install podman, build.
         run: |
-          sudo su
+          whoami
           apt update
           apt install podman
           podman image build --rm -t . --file Dockerfile --tag laas:$(date +%s) 
