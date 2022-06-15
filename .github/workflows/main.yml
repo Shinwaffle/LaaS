@@ -28,6 +28,8 @@ jobs:
       - name: update, install podman, build.
         run: |
           whoami
+          sudo su
+          whoami
           apt update
           apt install podman
           podman image build --rm -t . --file Dockerfile --tag laas:$(date +%s) 
